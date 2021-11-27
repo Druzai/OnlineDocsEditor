@@ -1,0 +1,59 @@
+.center {
+    width: 794px;
+    margin: auto;
+    padding: 10px;
+}
+
+body {
+    background-color: #0002;
+}
+
+#editor{
+    background-color: white;
+}
+
+#instruments > a {
+    color: black !important;
+    text-decoration: none !important;
+    margin: 5px !important;
+}
+
+/*.sidenav {*/
+/*    height: 100%;*/
+/*    width: 0;*/
+/*    position: fixed;*/
+/*    z-index: 3;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    background-color: #8c8c8c;*/
+/*    overflow-x: hidden;*/
+/*    transition: 0.5s;*/
+/*    padding-top: 80px;*/
+/*}*/
+
+/*.sidenav a {*/
+/*    padding: 8px 8px 8px 32px;*/
+/*    text-decoration: none;*/
+/*    font-size: 25px;*/
+/*    color: #606060;*/
+/*    display: block;*/
+/*    transition: 0.3s;*/
+/*}*/
+
+/*.sidenav a:hover {*/
+/*    color: #f1f1f1;*/
+/*}*/
+
+/*.sidenav .closebtn {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 25px;*/
+/*    font-size: 36px;*/
+/*    margin-left: 50px;*/
+/*    margin-top: 65px;*/
+/*}*/
+
+/*@media screen and (max-height: 450px) {*/
+/*    .sidenav {padding-top: 15px;}*/
+/*    .sidenav a {font-size: 18px;}*/
+/*}*/

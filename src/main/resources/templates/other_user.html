@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+
+    <title th:text="${userName} + ' | ODE'"></title>
+</head>
+<body>
+<nav th:replace="/parts/navbar :: navbar"></nav>
+
+<div class="p-2"></div>
+<div class="m-5 text-center">
+    <p th:if="${me}">Добро пожаловать на вашу страницу</p>
+    <p th:if="${!me}" th:text="'Добро пожаловать на страницу ' + ${userName}"></p>
+    <form th:if="${documents != null && !documents.isEmpty()}" th:action="@{/user/right}" th:object="${formObject}"
+          method="POST">
+        <input type="hidden" th:field="*{userId}"/>
+        <label>Документ:
+            <select th:field="*{documentId}">
+                <option th:each="doc : ${documents}" th:value="${doc.getId()}" th:text="${doc.getName()}"></option>
+            </select>
+        </label>
+        <label>Роль:
+            <select th:field="*{roleId}">
+                <option th:each="role : ${roles}" th:value="${role.getId()}" th:text="${role.getName()}"></option>
+            </select>
+        </label>
+        <button type="submit" class="btn btn-primary btn-small"
+                style="border-color: #20fcc1; background-color: #00fff7; color: #ffffff">Добавить/изменить роль у
+            данного пользователя для документа
+        </button>
+    </form>
+</div>
+
+<footer th:replace="/parts/footer :: footer"></footer>
+<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/setActiveNavLink.js/}"></script>
+</body>
+</html>
