@@ -13,13 +13,13 @@
 
 <body>
 <nav th:replace="/parts/navbar :: navbar"></nav>
-<div class="p-2"></div>
+
+<div class="p-4"></div>
 <div class="container">
     <form class="form-signin" method="POST" th:action="@{/login}">
         <h2 class="form-heading text-center">Авторизация</h2>
 
         <div class="form-group">
-            <span th:text="${paragraph}"></span>
             <input name="username" type="text" class="form-control mb-1" placeholder="Имя пользователя"
                    autofocus="true"/>
 

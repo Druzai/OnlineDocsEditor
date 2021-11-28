@@ -8,6 +8,7 @@ import ru.app.repositories.RoleRepository;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class RoleService {
@@ -28,5 +29,10 @@ public class RoleService {
             if (Objects.equals(j.getName(), "ROLE_EDITOR"))
                 j.setName("Редактор");
         }).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<Role> getUserRole() {
+        return roleRepository.findById(2L);
     }
 }

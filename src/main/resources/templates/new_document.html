@@ -14,10 +14,10 @@
 <body>
 <nav th:replace="/parts/navbar :: navbar"></nav>
 
-<div class="p-2"></div>
+<div class="p-4"></div>
 <div class="container">
     <form method="POST" class="form-signin" th:object="${document}" th:action="@{/doc/new}">
-        <h2 class="form-signin-heading text-center">Создать аккаунт</h2>
+        <h2 class="form-signin-heading text-center">Создать новый документ</h2>
         <div class="form-group">
             <input type="text" th:field="*{name}" class="form-control mb-1" placeholder="Имя документа" autofocus="true">
             <span class="has-error" th:if="${error != null}" th:text="${error}"></span>

@@ -44,11 +44,6 @@ public class Document {
             }
         }
         return this.paragraphList;
-//        paragraphList.
-//        paragraphList = paragraphList.stream().peek(paragraph1 -> {
-//            if (Objects.equals(paragraph1.getNumber(), paragraph.getNumber()))
-//                paragraph1.setContent(paragraph.getContent());
-//        }).collect(Collectors.toList());
     }
 
     public List<Paragraph> deleteParagraphs(List<Paragraph> paragraphs) {

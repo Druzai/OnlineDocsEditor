@@ -14,10 +14,11 @@
 <body>
 <nav th:replace="/parts/navbar :: navbar"></nav>
 
-<div class="p-2"></div>
+<div class="p-4"></div>
 <div class="container">
     <form method="POST" class="form-signin" th:object="${userForm}" th:action="@{/registration}">
         <h2 class="form-signin-heading text-center">Создать аккаунт</h2>
+        <input type="hidden" th:field="*{roles}"/>
         <div class="form-group">
             <input type="text" th:field="*{username}" class="form-control mb-1" placeholder="Имя пользователя"
                    autofocus="true">
@@ -35,17 +36,6 @@
             <span class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}"
                   th:errors="*{passwordConfirm}"></span>
         </div>
-
-        <p>
-            <label>Роли:
-                <input type="checkbox" name="roles" class="m-0"
-                       th:each="role : ${allRoles}"
-                       th:text="' ' + ${role.name} + ' '"
-                       th:value="${role.id}"
-                       th:field="*{roles}"
-                />
-            </label>
-        </p>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
     </form>

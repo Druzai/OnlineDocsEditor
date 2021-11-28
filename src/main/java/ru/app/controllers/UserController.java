@@ -17,6 +17,7 @@ import ru.app.services.RoleService;
 import ru.app.services.SecurityService;
 import ru.app.services.UserService;
 
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
@@ -42,8 +43,9 @@ public class UserController {
             return "redirect:/";
         }
 
-        model.addAttribute("allRoles", roleService.getRoles());
-        model.addAttribute("userForm", new User());
+        var usr = new User();
+        usr.setRoles(Set.of(roleService.getUserRole().get()));
+        model.addAttribute("userForm", usr);
 
         return "registration";
     }
@@ -53,7 +55,9 @@ public class UserController {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            model.addAttribute("allRoles", roleService.getRoles());
+            var usr = new User();
+            usr.setRoles(Set.of(roleService.getUserRole().get()));
+            model.addAttribute("userForm", usr);
             return "registration";
         }
         userService.save(userForm);

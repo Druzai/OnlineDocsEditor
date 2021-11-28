@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.app.models.Document;
 import ru.app.models.Paragraph;
 import ru.app.services.DocumentService;
-import ru.app.services.RoleService;
 import ru.app.services.UserService;
 
 import java.util.Comparator;

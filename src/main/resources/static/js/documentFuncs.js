@@ -88,8 +88,7 @@ editor.addEventListener('input', e => {
                 (dos[i].attributes.align == null && contentsCopy[i][1] != dos[i].attributes.align)) {
                 align = null;
                 if (dos[i].attributes.align != null)
-                    if (dos[i].attributes.align.value !== contentsCopy[i][1])
-                        align = dos[i].attributes.align.value;
+                    align = dos[i].attributes.align.value;
                 toSend.push({number: i, data: dos[i].innerHTML, align: align})
             }
         }

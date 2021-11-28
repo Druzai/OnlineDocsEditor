@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "paragrahes")
+@Table(name = "paragraphs")
 @Getter
 @Setter
 public class Paragraph {
@@ -20,7 +20,7 @@ public class Paragraph {
 
     private String align;
 
-    public Paragraph(Integer number, String content, String align){
+    public Paragraph(Integer number, String content, String align) {
         this.number = number;
         this.content = content;
         this.align = align;
