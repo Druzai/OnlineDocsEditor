@@ -16,6 +16,8 @@ public class Paragraph {
 
     private Integer number;
 
+    @Lob
+    @Column
     private String content;
 
     private String align;
